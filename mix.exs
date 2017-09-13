@@ -1,10 +1,13 @@
 defmodule ExActivity.Mixfile do
   use Mix.Project
 
+  @project_url "https://github.com/jackjoe/ex_activity"
+  @version "0.1.5"
+
   def project do
     [
       app: :ex_activity,
-      version: "0.1.4",
+      version: @version,
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       package: package(),
@@ -13,7 +16,7 @@ defmodule ExActivity.Mixfile do
 
       # Docs
       name: "ExActivity",
-      description: "ExActivity, log Activity to your repo",
+      description: "Log Activity to your repo, using Ectro",
       docs: [extras: ["README.md"], main: "readme"]
     ]
   end
@@ -38,11 +41,14 @@ defmodule ExActivity.Mixfile do
 
   defp package do
     [
-      files:       ["lib", "mix.exs", "README.md"],
-      maintainers: ["Jeroen Bourgois <jeroen@jackjoe.be>", "Pieter Michels <pieter@jackjoe.be>"],
-      organization: "jackjoe",
-      licenses:    ["COPYRIGHT"],
-      links:       []
+      files:        ["lib", "mix.exs", "README.md"],
+      maintainers:  ["Jeroen Bourgois", "Pieter Michels"],
+      organization:  "jackjoe",
+      licenses:     ["MIT"],
+      links: %{
+        "GitHub" => @project_url,
+        "Made by jackjoe" => "https://jackjoe.be/en",
+      }
     ]
   end
 
