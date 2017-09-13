@@ -28,6 +28,9 @@ defmodule ExActivity.Activity do
   def log(attrs) do
     repo = Application.get_env(:ex_activity, :repo, Repo)
 
+    query = "SELECT SLEEP(5)"
+    res = Ecto.Adapters.SQL.query!(Repo, query, [])
+
     %Activity{}
     |> changeset(attrs)
     |> repo.insert!
