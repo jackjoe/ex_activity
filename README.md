@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jackjoe/ex_activity.svg)](https://travis-ci.org/jackjoe/ex_activity)
+
 # ExActivity
 
 Logs activity to your database - using Ecto. You have control what you log, in a structured way.
