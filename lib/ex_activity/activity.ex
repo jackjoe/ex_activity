@@ -6,7 +6,7 @@ defmodule ExActivity.Activity do
   import Ecto.Query, warn: false
   import Ecto.Changeset
   alias ExActivity.Repo
-  alias ExActivity.{Activity, Log}
+  alias ExActivity.Activity
 
   schema "activity" do
     field :type, :string
@@ -19,8 +19,8 @@ defmodule ExActivity.Activity do
     timestamps()
   end
 
-  defp changeset(%Activity{} = act, attrs \\ %{}) do
-    act
+  defp changeset(%Activity{} = activity, attrs) do
+    activity
     |> cast(attrs, [:type, :action, :result, :details, :data, :ip, :user_agent])
     |> validate_required([:type, :action, :result])
   end
