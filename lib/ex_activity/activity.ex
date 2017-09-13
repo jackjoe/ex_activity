@@ -8,7 +8,7 @@ defmodule ExActivity.Activity do
   alias ExActivity.Repo
   alias ExActivity.{Activity, Log}
 
-  schema "Activity" do
+  schema "activity" do
     field :type, :string
     field :action, :string
     field :result, :string
