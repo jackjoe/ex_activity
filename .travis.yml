@@ -11,9 +11,5 @@ sudo: required
 services:
   - msyql
 before_install:
-  - mysql -e 'CREATE DATABASE ex_activity_test;'
-matrix:
-  exclude:
-    - elixir: 1.3
-      otp_release: 20.0
-script: mix test && mix credo
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS ex_activity_test;'
+script: MIX_ENV=travis mix test && mix credo
