@@ -51,6 +51,10 @@ The docs can be found at [https://hexdocs.pm/ex_activity](https://hexdocs.pm/ex_
 
 We are new to the Phoenix/Elixir club, and were set in our ways when it comes to logging. We prefer to log important actions to a database, in a unified way. While we use the default Elixir logger to log general stuff to services like PaperTrail, we needed something more. We used ActivityLog in Laravel before, so we made ExActivity.
 
+## TODO
+
+  - [ ] ip / user_agent from conn
+
 ## License
 
 MIT License. Copyright 2017 Jack+Joe.

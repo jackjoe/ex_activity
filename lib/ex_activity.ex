@@ -7,7 +7,7 @@ defmodule ExActivity do
 
   @doc false
 
-  # TODO ip / user_agent from conn
+  # ip / user_agent from conn
   @spec log(Log.t) :: Activity.t
   def log(%Log{} = log) do
     attrs = Map.from_struct(log)
