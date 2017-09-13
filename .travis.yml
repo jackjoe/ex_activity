@@ -9,7 +9,7 @@ otp_release:
 dist: trusty
 sudo: required
 services:
-  - msyql
+  - mysql
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS ex_activity_test;'
 script: MIX_ENV=travis mix test && mix credo
