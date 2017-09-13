@@ -4,6 +4,8 @@
 
 Logs activity to your database - using Ecto. You have control what you log, in a structured way.
 
+> **Warning:** this is still very alpha
+
 ## Installation
 
 Add `ex_activity` and your Ecto database adapter to your list of dependencies in `mix.exs`:
@@ -57,4 +59,5 @@ We are new to the Phoenix/Elixir club, and were set in our ways when it comes to
 
 ## License
 
-MIT License. Copyright 2017 Jack+Joe.
+ExActivity is Copyright © 2017 Jack+Joe. It is free software, and may be
+redistributed under the terms specified in the [LICENSE](/LICENSE) file.
