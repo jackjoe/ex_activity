@@ -1,19 +1,11 @@
 defmodule ExActivity do
-  use Application
   alias ExActivity.{Activity, Log}
 
   @moduledoc """
-  Enables to log activity in a structured way to a MySQL database
-
-  ## Configuration
-  Add the following to your production config
-    config :ex_activity, ecto_repos: [ExActivity.Repo]
+  Enables to log activity in a structured way to a MySQL database.
   """
 
   @doc false
-  def start(_type, _args) do
-    Supervisor.start_link(__MODULE__, [], name: :ex_activity)
-  end
 
   # TODO ip / user_agent from conn
   @spec log(Log.t) :: Activity.t
