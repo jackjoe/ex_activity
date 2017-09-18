@@ -10,6 +10,9 @@ defmodule ExActivity do
   # ip / user_agent from conn
   @spec log(Log.t) :: Activity.t
   def log(%Log{} = log) do
+    IO.puts(">>")
+    IO.inspect(Application.get_env(:ex_activity, :username))
+    IO.puts(">>")
     attrs = Map.from_struct(log)
     # Fill up
     # TODO

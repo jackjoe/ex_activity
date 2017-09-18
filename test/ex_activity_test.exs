@@ -2,7 +2,7 @@ defmodule ExActivityTest do
   use ExUnit.Case
   doctest ExActivity
 
-  alias ExActivity.{Activity, Log}
+  alias ExActivity.{Log}
 
   test "log/1 saves a log" do
     log = ExActivity.log(%Log{
