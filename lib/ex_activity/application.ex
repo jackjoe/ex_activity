@@ -1,5 +1,8 @@
-Mix.Task.run "ecto.create"
-Mix.Task.run "ecto.migrate"
+defmodule ExActivity.Application do
+  use Application
+
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
 
 config = []
 
@@ -11,7 +14,11 @@ config = Keyword.put(config, :database, Application.get_env(:ex_activity, :datab
 config = Keyword.put(config, :hostname, Application.get_env(:ex_activity, :hostname, "localhost"))
 config = Keyword.put(config, :charset, Application.get_env(:ex_activity, :charset, "utf8mb4"))
 
-ExActivity.Repo.start_link(config)
-Ecto.Adapters.SQL.Sandbox.mode(ExActivity.Repo, {:shared, self()})
+    children = [
+      supervisor(ExActivity.Repo, [config]),
+    ]
 
-ExUnit.start()
+    opts = [strategy: :one_for_one, name: ExActivity.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+end
