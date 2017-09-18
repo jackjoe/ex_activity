@@ -5,7 +5,6 @@ defmodule ExActivity.Activity do
   use Ecto.Schema
   import Ecto.Query, warn: false
   import Ecto.Changeset
-  alias ExActivity.Repo
   alias ExActivity.Activity
 
   schema "activity" do
@@ -26,13 +25,17 @@ defmodule ExActivity.Activity do
   end
 
   def log(attrs) do
-    repo = Application.get_env(:ex_activity, :repo, Repo)
+    repo = Application.get_env(:ex_activity, :repo, nil)
 
-    query = "SELECT SLEEP(5)"
-    Ecto.Adapters.SQL.query!(Repo, query, [])
+    if is_nil(repo) do
+      IO.puts('no repo configured')
+    else
+      query = "SELECT SLEEP(5)"
+      Ecto.Adapters.SQL.query!(Repo, query, [])
 
-    %Activity{}
-    |> changeset(attrs)
-    |> repo.insert!
+      %Activity{}
+      |> changeset(attrs)
+      |> repo.insert!
+    end
   end
 end
