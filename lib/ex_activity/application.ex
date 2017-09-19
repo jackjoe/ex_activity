@@ -1,24 +1,19 @@
 defmodule ExActivity.Application do
   use Application
 
+  # See https://hexdocs.pm/elixir/Application.html
+  # for more information on OTP Applications
   def start(_type, _args) do
-    import Supervisor.Spec, warn: false
+    import Supervisor.Spec
 
-config = []
-
-config = Keyword.put(config, :url, System.get_env("DATABASE_URL"))
-config = Keyword.put(config, :adapter, Ecto.Adapters.MySQL)
-config = Keyword.put(config, :username, Application.get_env(:ex_activity, :username, ""))
-config = Keyword.put(config, :password, Application.get_env(:ex_activity, :password, ""))
-config = Keyword.put(config, :database, Application.get_env(:ex_activity, :database, ""))
-config = Keyword.put(config, :hostname, Application.get_env(:ex_activity, :hostname, "localhost"))
-config = Keyword.put(config, :charset, Application.get_env(:ex_activity, :charset, "utf8mb4"))
-
+    # Define workers and child supervisors to be supervised
     children = [
-      supervisor(ExActivity.Repo, [config]),
+      # Start the Ecto repository
+      supervisor(ExActivity.Repo, [])
     ]
-
+    # See https://hexdocs.pm/elixir/Supervisor.html
+    # for other strategies and supported options
     opts = [strategy: :one_for_one, name: ExActivity.Supervisor]
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link children, opts
   end
 end

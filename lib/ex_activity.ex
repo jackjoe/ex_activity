@@ -3,6 +3,11 @@ defmodule ExActivity do
 
   @moduledoc """
   Enables to log activity in a structured way to a MySQL database.
+
+  The `log` functions accepts a `ExActivity.Log` struct which is then saved to the database.
+
+  Log like so:
+      ExActivity.log(%ExActivity.Log{type: "error", action: "saveUser", result: "invalid_email"})
   """
 
   @doc false

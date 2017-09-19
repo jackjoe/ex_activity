@@ -55,6 +55,7 @@ We are new to the Phoenix/Elixir club, and were set in our ways when it comes to
 
 ## TODO
 
+  - [ ] improve documentation
   - [ ] ip / user_agent from conn
 
 ## License
