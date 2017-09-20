@@ -47,7 +47,7 @@ defmodule ExActivity do
     for {k, v} <- conn.req_headers, String.downcase(k) == String.downcase(header) do
       case v do
         [] -> ""
-        _ -> v
+        _ -> hd(v)
       end
     end
   end
