@@ -13,7 +13,7 @@ Add `ex_activity` and your Ecto database adapter to your list of dependencies in
 ```elixir
 def deps do
   [
-    {:ex_activity, "~> 0.1.6"},
+    {:ex_activity, "~> 0.2.0"},
     {:mariaex, "~> 0.8.2"}
   ]
 end
