@@ -38,7 +38,7 @@ defmodule ExActivity do
 
   defp parse_conn(conn) do
     %{
-      user_agent: get_conn_header(conn, "User-Agent"),
+      user_agent: get_conn_header(conn, "user-agent"),
       ip: get_ip(conn)
     }
   end
