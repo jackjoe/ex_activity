@@ -16,8 +16,8 @@ defmodule ExActivity do
 
   @spec log(Log.t) :: Activity.t
   def log(%Log{} = log) do
-    Map.from_struct(log)
-    |> process_log()
+    attrs = Map.from_struct(log)
+    process_log(attrs)
   end
 
   def log(%Log{} = log, conn) do
