@@ -44,7 +44,12 @@ defmodule ExActivity do
   end
 
   defp get_conn_header(conn, header) do
-    for {k, v} <- conn.req_headers, k == header, do: v
+    for {k, v} <- conn.req_headers, String.downcase(k) == String.downcase(header) do
+      case v do
+        [] -> ""
+        _ -> v
+      end
+    end
   end
 
   defp cast(attrs) do
