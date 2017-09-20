@@ -2,7 +2,7 @@ defmodule ExActivity.Mixfile do
   use Mix.Project
 
   @project_url "https://github.com/jackjoe/ex_activity"
-  @version "0.1.24"
+  @version "0.2.0"
 
   def project do
     [
