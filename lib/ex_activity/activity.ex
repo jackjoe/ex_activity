@@ -26,7 +26,6 @@ defmodule ExActivity.Activity do
   end
 
   def log(attrs) do
-
     query = "SELECT SLEEP(5)"
     Ecto.Adapters.SQL.query!(Repo, query, [])
 

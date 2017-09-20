@@ -2,13 +2,13 @@ defmodule ExActivity.Mixfile do
   use Mix.Project
 
   @project_url "https://github.com/jackjoe/ex_activity"
-  @version "0.1.12"
+  @version "0.1.17"
 
   def project do
     [
       app: :ex_activity,
       version: @version,
-      elixir: "~> 1.4",
+      elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env),
       package: package(),
       start_permanent: Mix.env == :prod,
@@ -24,7 +24,8 @@ defmodule ExActivity.Mixfile do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {ExActivity.Application, []}
     ]
   end
 
@@ -33,7 +34,7 @@ defmodule ExActivity.Mixfile do
     [
       {:ecto, "~> 2.1"},
       {:ex_doc, "~> 0.16.0", only: :dev},
-      {:mariaex, "~> 0.8.2", only: [:dev, :test, :travis]},
+      {:mariaex, "~> 0.8.2"},
       {:dialyxir, "~> 0.5", [only: [:dev, :test, :travis]]},
       {:credo, "~> 0.8", [only: [:dev, :test, :travis]]}
     ]

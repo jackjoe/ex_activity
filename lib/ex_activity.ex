@@ -47,6 +47,12 @@ defmodule ExActivity do
     #   to_string(Poison.Encoder.encode(current_value, []))
     # end)
 
-    Activity.log(attrs)
+    Task.Supervisor.start_child supervisor_name(), fn ->
+      Activity.log(attrs)
+    end
+  end
+
+  def supervisor_name do
+    ExActivity.Supervisor
   end
 end
