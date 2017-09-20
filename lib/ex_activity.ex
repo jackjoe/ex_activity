@@ -44,11 +44,10 @@ defmodule ExActivity do
   end
 
   defp get_conn_header(conn, header) do
-    for {k, v} <- conn.req_headers, String.downcase(k) == String.downcase(header) do
-      case v do
-        [] -> ""
-        _ -> hd(v)
-      end
+    headers = Enum.into(conn.req_headers, %{})
+    case headers[header] do
+      nil -> ""
+      _ -> headers[header]
     end
   end
 
