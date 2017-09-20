@@ -7,11 +7,5 @@ config :ex_activity,
 
 config :ex_activity, ExActivity.Repo,
   adapter: Ecto.Adapters.MySQL
-#   username: "jackjoe",
-#   password: "",
-#   database: "gemeentet-dev",
-#   hostname: "localhost",
-#   charset: "utf8mb4",
-#   pool_size: 10
 
 import_config "#{Mix.env}.exs"
