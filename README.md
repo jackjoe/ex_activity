@@ -14,7 +14,6 @@ Add `ex_activity` and your Ecto database adapter to your list of dependencies in
 def deps do
   [
     {:ex_activity, "~> 0.2.0"},
-    {:mariaex, "~> 0.8.2"}
   ]
 end
 ```
@@ -23,13 +22,11 @@ Then run mix deps.get to fetch the dependencies.
 Next provide configuration for the repo ExActivity will use:
 
 ```elixir
-config :ex_activity,
-  adapter: Ecto.Adapters.MySQL,
+config :ex_activity, ExActivity.Repo,
   username: "sqluser",
   password: "",
   database: "app_db",
   hostname: "localhost",
-  charset: "utf8mb4",
 ```
 
 ## Usage
