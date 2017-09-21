@@ -34,7 +34,7 @@ defmodule ExActivity.Mixfile do
     [
       {:ecto, "~> 2.1"},
       {:ex_doc, "~> 0.16.0", only: :dev},
-      {:mariaex, "~> 0.8.2"},
+      {:mariaex, "~> 0.8.2", only: [:dev, :test, :travis]},
       {:dialyxir, "~> 0.5", [only: [:dev, :test, :travis]]},
       {:credo, "~> 0.8", [only: [:dev, :test, :travis]]}
     ]

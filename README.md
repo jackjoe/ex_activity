@@ -14,6 +14,7 @@ Add `ex_activity` and your Ecto database adapter to your list of dependencies in
 def deps do
   [
     {:ex_activity, "~> 0.2.0"},
+    {:mariaex, "~> 0.8.2"} # you can use any other Ecto adapter here
   ]
 end
 ```
@@ -23,6 +24,7 @@ Next provide configuration for the repo ExActivity will use:
 
 ```elixir
 config :ex_activity, ExActivity.Repo,
+  adapter: Ecto.Adapters.MySQL, # or use postgres
   username: "sqluser",
   password: "",
   database: "app_db",
@@ -44,7 +46,6 @@ ExActivity.log(%ExActivity.Log{
 ## Documentation
 
 The docs can be found at [https://hexdocs.pm/ex_activity](https://hexdocs.pm/ex_activity).
-
 
 ## Why?
 
