@@ -4,16 +4,14 @@
 
 Web app logging as it was meant to be: non-blocking and abundant\*
 
----
-
 ###### \* non-blocking means: in a separate Elixir Task.
+
+> **Warning:** this is still very alpha
 
 ## What?
 
 Web applications have a lot going on, and you want to be in control of the flow. Logging is crucial, but logging too much will slow down those µ-second response times! Not with Elixir and
 ExActivity! It logs activity to your database in a non-blocking way, using Ecto. You have control what you log, in a structured way.
-
-> **Warning:** this is still very alpha
 
 ## Installation
 
