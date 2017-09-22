@@ -62,10 +62,10 @@ We are new to the Phoenix/Elixir club, and were set in our ways when it comes to
 
 ## TODO
 
-  - [ ] improve documentation
+  - [x] improve documentation
   - [x] ip / user_agent from conn
   - [ ] run migrations when installing
-  - [ ] extend docs with more information
+  - [x] extend docs with more information
 
 ## License
 
