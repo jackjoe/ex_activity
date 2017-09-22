@@ -2,7 +2,16 @@
 
 # ExActivity
 
-Logs activity to your database - using Ecto. You have control what you log, in a structured way.
+Web app logging as it was meant to be: non-blocking and abundant\*
+
+---
+
+###### \* non-blocking means: in a separate Elixir Task.
+
+## What?
+
+Web applications have a lot going on, and you want to be in control of the flow. Logging is crucial, but logging too much will slow down those µ-second response times! Not with Elixir and
+ExActivity! It logs activity to your database in a non-blocking way, using Ecto. You have control what you log, in a structured way.
 
 > **Warning:** this is still very alpha
 
@@ -56,7 +65,7 @@ ExActivity.log(%ExActivity.Log{
 
 The docs can be found at [https://hexdocs.pm/ex_activity](https://hexdocs.pm/ex_activity).
 
-## Why?
+## Why? Use `:logger` already!
 
 We are new to the Phoenix/Elixir club, and were set in our ways when it comes to logging. We prefer to log important actions to a database, in a unified way. While we use the default Elixir logger to log general stuff to services like PaperTrail, we needed something more. We used ActivityLog in Laravel before, so we made ExActivity.
 
