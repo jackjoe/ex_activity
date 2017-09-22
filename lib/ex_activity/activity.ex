@@ -2,6 +2,16 @@ defmodule ExActivity.Activity do
   @moduledoc """
   Activity Ecto schema. Takes care of persisting the actual log.
   """
+
+  @type t :: %__MODULE__{
+    type: String.t,
+    action: String.t,
+    details: String.t | integer,
+    data: String.t,
+    ip: String.t,
+    user_agent: String.t
+  }
+
   use Ecto.Schema
   import Ecto.Query, warn: false
   import Ecto.Changeset

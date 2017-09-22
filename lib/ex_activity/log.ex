@@ -1,8 +1,6 @@
 defmodule ExActivity.Log do
   @moduledoc """
-  Log struct.
-
-  For now everything should be string or integer (for some fields), we will try to expand this to accept more data/struct like structures, and encode them to JSON.
+  Log struct, which can be passed to the `ExActivity.log/1` or `ExActivity.log/2`. For more info about logging, see `ExActivity`
   """
 
   @type t :: %ExActivity.Log{

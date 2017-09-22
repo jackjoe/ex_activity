@@ -43,6 +43,15 @@ ExActivity.log(%ExActivity.Log{
 })
 ```
 
+### Properties
+  * `type` - gives more context about the action you are logging; it could be the name of the controller where you log from, the context, ...
+  * `action` - method name, sub-action in method, ...
+  * `result` - outcome of the action such as ERROR, SUCCESS, WRONG_CODE, ...
+  * `details` - more like meta date about current state
+  * `data` - raw data, request parameters, db result, ...
+
+  _For now everything should be string or integer (for some fields), we will try to expand this to accept more data/struct like structures, and encode them to JSON._
+
 ## Documentation
 
 The docs can be found at [https://hexdocs.pm/ex_activity](https://hexdocs.pm/ex_activity).
