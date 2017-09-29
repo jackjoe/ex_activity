@@ -15,6 +15,8 @@ ExActivity! It logs activity to your database in a non-blocking way, using Ecto.
 
 ## Installation
 
+### Setup
+
 Add `ex_activity` and your Ecto database adapter to your list of dependencies in `mix.exs`:
 
 ```elixir
@@ -25,7 +27,7 @@ def deps do
   ]
 end
 ```
-Then run mix deps.get to fetch the dependencies.
+Then run `mix deps.get` to fetch the dependencies.
 
 Next provide configuration for the repo ExActivity will use:
 
@@ -37,6 +39,14 @@ config :ex_activity, ExActivity.Repo,
   database: "app_db",
   hostname: "localhost",
 ```
+
+### Migrate
+
+The repo contains two migration files to setup your db. Just copy them to your own `priv/repo/migrations` folder and run:
+
+`mix ecto.migrate`
+
+> Note: using other adapters than `MySQL` has not been thoroughly tested. Although once setup we use no proprietary query syntax, the migrations you can run to get your db ready using the mix tasks *are* MySQL specific. This in on our TODO list.
 
 ## Usage
 
@@ -71,6 +81,7 @@ We are new to the Phoenix/Elixir club, and were set in our ways when it comes to
 
   - [x] improve documentation
   - [x] ip / user_agent from conn
+  - [ ] make migrations adapter agnostic (LONGTEXT)
   - [ ] run migrations when installing
   - [x] extend docs with more information
 
