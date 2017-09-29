@@ -10,4 +10,4 @@ services:
   - mysql
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS ex_activity_test;'
-script: MIX_ENV=travis mix test && mix credo
+script: MIX_ENV=travis mix test && mix ecto.migrate && mix credo
