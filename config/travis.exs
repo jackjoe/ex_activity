@@ -5,5 +5,4 @@ config :ex_activity, ExActivity.Repo,
   database: "ex_activity_test",
   username: "travis",
   password: "",
-  hostname: "127.0.0.1",
-  pool: Ecto.Adapters.SQL.Sandbox
+  hostname: "127.0.0.1"
